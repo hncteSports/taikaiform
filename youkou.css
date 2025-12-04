@@ -37,15 +37,24 @@ body{
     flex-direction: column;
 }
 
-.footer{
-    color: #dddddd;
-    background-color: black;
-    padding: 20px;
-    text-align: center;
-    margin-top: 50px; /* フッターの上にスペースを追加 */
-    width: 100%;
-    position: relative;
-    bottom: 0;
+.footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.footer a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 8px;
+}
+
+.footer img {
+  margin: 12px;
+  border-radius: 8px;
 }
 
 h3{
