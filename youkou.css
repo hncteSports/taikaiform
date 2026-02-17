@@ -43,7 +43,7 @@ body{
     padding: 40px 0;
     text-align: center;
     margin-top: 50px; /* フッターの上にスペースを追加 */
-    width: 400%;
+    width: 200%;
     position: relative;
     bottom: 0;
 }
