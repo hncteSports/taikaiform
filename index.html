@@ -27,42 +27,47 @@
     <h2>参加フォームへの回答はチームリーダーが代表して行うものとします。</h2>
     <h2>国立高専と公立、私立高専の参加フォームでは入力内容に違いがあるためフォームが別になっています。</h2>
 
+
+
     <table>
-    <td><label><input type="checkbox" id="checkbox1"><a href="kiyaku_4.html">大会規約</a> </label><br></td>
-    <td><label><input type="checkbox" id="checkbox2"><a href="rulebook_4.html">大会ルール</a></label><br></td>
-    </table>
+    <tr>
+        <td><label><input type="checkbox" id="checkbox1"><a href="kiyaku_4.html">大会規約</a> </label><br></td>
+        <td><label><input type="checkbox" id="checkbox2"><a href="rulebook_4.html">大会ルール</a></label><br></td>
+    </tr>
+</table>
 
-    <button id="navigateButton" onclick="navigate()">国立高専用大会参加フォームへ</button>
-    <button id="navigateButton" onclick="navigate()">私公立高専用大会参加フォームへ</button>
+<button class="nav-btn" onclick="navigate('https://forms.office.com/pages/responsepage.aspx?id=XYP-cpVeEkWK4KezivJfyDky8SqMHhFFgmC7c06AJBhUNEhVQzNaNEFGT1dCM0tLQlk0V1BLNlA4MiQlQCN0PWcu&route=shorturl')">国立高専用大会参加フォームへ</button>
+<button class="nav-btn" onclick="navigate('https://forms.office.com/pages/responsepage.aspx?id=XYP-cpVeEkWK4KezivJfyPt9-ceL3L5Lsq59qn6VmRlUM1pNM09WSktSOFNQN0lYOThINDFWRkJRNS4u&route=shorturl')">私公立高専用大会参加フォームへ</button>
 
-    <script>
-        // チェックボックスとボタンの要素を取得
-        const checkbox1 = document.getElementById('checkbox1');
-        const checkbox2 = document.getElementById('checkbox2');
-        const navigateButton = document.getElementById('navigateButton');
+<script>
+    // 要素の取得
+    const checkbox1 = document.getElementById('checkbox1');
+    const checkbox2 = document.getElementById('checkbox2');
+    // 全てのボタンを取得するために querySelectorAll を使用
+    const navButtons = document.querySelectorAll('.nav-btn');
 
-        // チェックボックスの状態をチェックし、ボタンの表示/非表示を制御
-        function checkCheckboxes() {
-            if (checkbox1.checked && checkbox2.checked) {
-                navigateButton.style.display = 'inline';
-            } else {
-                navigateButton.style.display = 'none';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            checkCheckboxes(); // 初期状態を確認
+    // チェックボックスの状態をチェックし、全てのボタンの表示/非表示を制御
+    function checkCheckboxes() {
+        const isVisible = checkbox1.checked && checkbox2.checked;
+        
+        // 全てのボタンに対して処理を行う
+        navButtons.forEach(button => {
+            button.style.display = isVisible ? 'inline-block' : 'none';
         });
+    }
 
-        // チェックボックスの状態が変わるたびにcheckCheckboxes関数を呼び出す
-        checkbox1.addEventListener('change', checkCheckboxes);
-        checkbox2.addEventListener('change', checkCheckboxes);
+    document.addEventListener('DOMContentLoaded', function() {
+        checkCheckboxes(); // 初期状態を確認
+    });
 
-        // ボタンがクリックされたときにYouTubeに移動する
-        function navigate() {
-            window.location.href = "https://forms.office.com/pages/responsepage.aspx?id=XYP-cpVeEkWK4KezivJfyDky8SqMHhFFgmC7c06AJBhUNEhVQzNaNEFGT1dCM0tLQlk0V1BLNlA4MiQlQCN0PWcu&route=shorturl";
-        }
-    </script>
+    checkbox1.addEventListener('change', checkCheckboxes);
+    checkbox2.addEventListener('change', checkCheckboxes);
+
+    // 引数で受け取ったURLに遷移する
+    function navigate(url) {
+        window.location.href = url;
+    }
+</script>
 
 
 <footer class="footer">
